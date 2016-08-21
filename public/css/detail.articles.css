@@ -1,0 +1,24 @@
+.articles {
+    position: relative;
+    min-height: 450px;
+}
+.articles .aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 200px;    
+    margin-top: 20px;
+}
+.articles .article {
+    display: inline-block;
+    margin-left: 230px;
+}
+@media (max-width: 767px){
+    .articles {
+        min-height: 0;
+    }
+    .articles .article {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,53 @@
+.header {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+}
+/* 首页头部 */
+.header-home {    
+    background: #323232 no-repeat center center scroll;
+    background-image: url(../img/index.jpg);    
+    background-size: cover;
+    height: 400px;
+}
+/* 文章页面头部 */
+.header-article {    
+    background: #323232 no-repeat center center scroll;
+    background-image: url(../img/list.jpg);    
+    background-size: cover;
+    height: 250px;
+}
+.header-topic {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;    
+    color: #fff;    
+    position: relative;
+    z-index: 9;
+}
+@media (min-width: 768px){
+    .header-home {
+        height: 640px;
+    }
+    .header-article {
+        height: 400px;
+    }
+    .header-topic .topic{
+        font-size: 60px;
+    }
+    .header-topic .sub-topic{
+        font-size: 25px;
+    }
+}
+
+
+

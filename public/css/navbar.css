@@ -1,0 +1,46 @@
+/* 导航栏 */
+.navbar-home {    
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    color: #FFF;
+    border-color: rgba(231, 231, 231, 0);
+    font-weight: 800;    
+    z-index: 10;
+}
+.navbar-home .navbar-brand,
+.navbar-home .navbar-brand:focus {
+    color: #fff;
+}
+.navbar-home .navbar-brand:hover{
+    color: #fff;
+    text-shadow: 1px 1px 2px #50ebff;
+}
+.navbar-home .navbar-toggle:hover,
+.navbar-home .navbar-toggle:focus {
+    background-color: rgba(221, 221, 221, 0);
+}
+.navbar-home .navbar-collapse,
+.navbar-home .navbar-form {
+    border-color: rgba(231, 231, 231, 0);
+}
+.navbar-home .navbar-nav>li>a,
+.navbar-home .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-home .navbar-nav>.active>a, 
+.navbar-home .navbar-nav>.active>a:hover, 
+.navbar-home .navbar-nav>.active>a:focus {
+    color: #50ebff;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #50ebff;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+@media (max-width: 767px){
+    .navbar-home .navbar-collapse {
+        background-color: rgba(105, 98, 92, 0.7);
+    }
+}

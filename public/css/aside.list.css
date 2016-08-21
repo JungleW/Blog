@@ -1,0 +1,64 @@
+.aside-list .aside-menu {    
+    padding: 5px;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+.aside-list .title-search {    
+    padding-bottom: 5px;
+    position: relative;
+}
+.aside-list .title-list{    
+    height: 360px;
+    overflow-y: auto;
+    margin-right: -25px;
+}
+.aside-list .title-list .title-item {
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
+}
+.aside-list .title-list .title-item:hover {
+    font-size: 18px;
+}
+
+.aside-list .title-list .selected{
+    color: red;
+    font-size: 18px;
+}
+/* aside隐藏时的菜单按钮 */
+.aside-list .aside-fixed-nav {
+    position: fixed;
+    left: 1%;
+    bottom: 2%;
+}
+.aside-list .aside-fixed-nav .menu-btn {
+    display: none;
+}
+/* 遮罩层 */
+.aside-list .aside-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(8,7,7,0.5);
+    z-index: 99;
+}
+
+@media (max-width: 767px){
+    .aside-list .aside-fixed-nav .menu-btn {
+        display: block;
+    }
+    .aside-list .aside-menu {    
+        position: fixed;
+        top: 10%;
+        left: -250px;
+        z-index: 100;
+        transition: left 1s;
+    }
+    .aside-list .aside-menu-show{
+        left: 1%;
+    }
+    .aside-list .aside-layer-show{   
+        right: 0;
+    }
+}

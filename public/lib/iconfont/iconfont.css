@@ -1,0 +1,37 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1471722401'); /* IE9*/
+  src: url('iconfont.eot?t=1471722401#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1471722401') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1471722401') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1471722401#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-liebiao:before { content: "\e612"; }
+.icon-category:before { content: "\e613"; }
+.icon-close:before { content: "\e600"; }
+.icon-loading:before { content: "\e601"; }
+.icon-buyecschooseplan:before { content: "\e602"; }
+.icon-buyecsstorage:before { content: "\e603"; }
+.icon-buyotherask:before { content: "\e604"; }
+.icon-buyotherdelete:before { content: "\e605"; }
+.icon-buyotherdown:before { content: "\e606"; }
+.icon-buyotherup:before { content: "\e607"; }
+.icon-error:before { content: "\e608"; }
+.icon-warning:before { content: "\e609"; }
+.icon-arrowsdownline:before { content: "\e60a"; }
+.icon-arrowleft:before { content: "\e60b"; }
+.icon-arrowright:before { content: "\e60c"; }
+.icon-arrowsdownline1:before { content: "\e60d"; }
+.icon-arrowsleftline:before { content: "\e60e"; }
+.icon-arrowsrightline:before { content: "\e60f"; }
+.icon-move:before { content: "\e610"; }
+.icon-pencil:before { content: "\e611"; }
