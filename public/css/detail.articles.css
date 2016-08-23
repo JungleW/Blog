@@ -7,12 +7,12 @@
     top: 0;
     left: 0;
     display: inline-block;
-    width: 200px;    
+    width: 250px;    
     margin-top: 20px;
 }
 .articles .article {
     display: inline-block;
-    margin-left: 230px;
+    margin-left: 280px;
 }
 @media (max-width: 767px){
     .articles {

@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>JungleW-Article</title> 
-    <link href="/lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/lib/iconfont/iconfont.css" rel="stylesheet">
-    <link href="/css/common.css" rel="stylesheet">
-</head>
-<body ng-app="essayApp" ng-controller="essayController">
+<% include head.html %>
+    
+<body ng-app="blogApp" ng-controller="blogController">
     <% include navbar.html %>
     <% include header.articles.html %>
     <div class="container articles">
@@ -20,11 +10,4 @@
     <% include footer.html %>
     <% include to_top_btn.html %>
     
-    <script src="/lib/jquery-3.1.0/jquery-3.1.0.min.js"></script>
-    <script src="/lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <script src="/lib/angular/angular.min.js"></script>
-    <script src="/js/essay.js"></script>
-    <script src="/js/aside.list.js"></script>
-    <script src="/js/to_top_btn.js"></script>
-</body>
-</html>
+<% include bottom.html %>

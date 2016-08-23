@@ -1,27 +1,21 @@
-<link href="/css/aside.list.css" rel="stylesheet">
-<aside class="aside aside-list">
-    <div class="aside-menu">
-        <div class="title-search">
-            <input class="form-control" type="text" placeholder="搜索标题" />
+<aside class="aside aside-list" ng-controller="asideListCtrl">
+    <div class="aside-menu" ng-class="{true: 'aside-menu-show'}[show_titles]">
+        <form name="searchForm" novalidate>
+            <div class="title-search">
+                <input class="form-control title-search-input" type="text" placeholder="搜索标题" name="searchKey" ng-model="searchKey" required/>
+                <a class="title-search-btn" href="javascript:void(0)" ng-click="pageManager.search('')"><i class="iconfont icon-sousuo"></i></a>
+                <a class="title-clear-btn" href="javascript:void(0)" ng-hide="searchForm.searchKey.$error.required" ng-click="clearSearch()"><i class="iconfont icon-buyotherdelete"></i></a>
+            </div>
+        </form>
+        <div class="list-group title-list" ng-cloak>
+            <a class="list-group-item title-item" ng-repeat="title in titles" href="javascript: void(0)" ng-class="{true: 'selected'}[title.articleId == currentId]" ng-click="getArticleById(title.articleId)" ng-bind="title.name"></a>
         </div>
-        <div class="list-group title-list">
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item selected" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-            <a class="list-group-item title-item" href="#article">关于博客</a>
-        </div>
+        <div ng-show='pageFactory.busy'>Loading data...</div>
     </div>
     <div class="fixed-nav aside-fixed-nav">
-        <a class="btn menu-btn" href="javascript: void(0)"><i class="iconfont icon-liebiao"></i></a>
+        <a class="btn menu-btn" href="javascript: void(0)" ng-click="showAsideMenu()"><i class="iconfont icon-liebiao"></i></a>
     </div>
-    <div class="aside-layer"></div>
+    <div class="aside-layer" ng-class="{true: 'aside-layer-show'}[show_titles]" ng-click="hideAsideMenu()"></div>
 </aside>
 
 
