@@ -39,8 +39,25 @@ router.get('/ajax/article', function(req, res, next) {
 });
 /* GET article. */
 router.get('/ajax/titles', function(req, res, next) {
-    var articleId = req.query.articleId || 1;
-    res.send(titles);
+    var flag = false;
+    var searchKey = req.query.searchKey;
+    if(searchKey=="") flag = true;
+    var page = parseInt(req.query.page);
+    var per_page = parseInt(req.query.per_page);
+    var startIndex = page * per_page;
+    var retTitles = [];
+    var length = titles.length;  
+    var len = 0;
+    for(var i=startIndex; len <per_page && i<length; i++){
+        if(flag || titles[i].name.match(searchKey)){
+            retTitles.push(titles[i]);
+            len++;
+        }
+    }
+    res.send({
+        searchkey: searchKey,
+        titles: retTitles
+    });
 });
 
 module.exports = router;

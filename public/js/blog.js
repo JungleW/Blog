@@ -4,63 +4,58 @@ app.controller('blogController', function($scope, $http) {
           $scope.$broadcast("updateArticle", msg);
       });
 });
-app.controller('asideListCtrl', function($scope, $http, $timeout) {
+app.controller('asideListCtrl', function($scope, $http) {
     $scope.searchKey = "";
-    $scope.currentId = "";
-    $scope.pageManager = function(){
-        this.url = "/blog/ajax/titles",
-        this.next_page = 1,
-        this.per_page = 9,
-        this.search = "",
-        this.more = false,
-        this.search = function(searchKey) {
-            more = false;
-            next_page = 1;
-            searchkey = searchKey==undefined? "": searchKey;
-            var searchUrl = url + "?search=" + searchkey + "&amount=" + per_page;
-            $http.get(searchUrl).success(function (response) {
-                more = true;
-                $scope.titles = response;
-                next_page++;
-            });
-        },
-        this.nextPage = function() {
-            more = false;
-            if(more){
-            var searchUrl = url + "?search=" + searchkey + "&amount=" +(next_page*per_page);
-                $http.get(searchUrl).success(function (response) {
-                    more = true;
-                    var length = response.length;
-                    var html = "";
-                    for(var i= 0; i<length; i++) {
-                        html += '<a class="list-group-item title-item" ng-repeat="title in titles" href="javascript: void(0)" ng-click="getArticleById(title.articleId)" ng-bind="title.name"></a>';
-                    }
-                    next_page++;
-                });
-            }       
+    $scope.search = function() {
+        $scope.pageInfo = {
+            currentPage: 0,
+            perPage: 10,
+            searchKey: "",
+            url: "/blog/ajax/titles",
+            more: false,
+            state: ""
         }
-        return {
-            search: search,
-            nextPage: nextPage
-        }
-    }();
-    $scope.clearSearch = function(){
+        $scope.pageInfo.searchkey = ($scope.searchKey==undefined? "": $scope.searchKey);
+        var searchUrl = $scope.pageInfo.url + "?searchKey=" + $scope.pageInfo.searchkey + "&page=" + $scope.pageInfo.currentPage + "&per_page=" + $scope.pageInfo.perPage;
+        $http.get(searchUrl).success(function (response) {
+            if(response.titles.length != 0){
+                $scope.pageInfo.more = true;
+            }
+            $scope.titles = response.titles;
+            $scope.pageInfo.currentPage += 1;
+        });
+    };
+    $scope.next_page = function() {debugger;
+        $scope.pageInfo.state = "加载中...";
+        var searchUrl = $scope.pageInfo.url + "?searchKey=" + $scope.pageInfo.searchkey + "&page=" + $scope.pageInfo.currentPage + "&per_page=" + $scope.pageInfo.perPage;
+        $http.get(searchUrl).success(function (response) {
+            if(response.titles.length == 0){
+                $scope.pageInfo.more = false;
+            }
+            $scope.pageInfo.state = "";
+            
+            for (var i in response.titles) { 
+                $scope.titles.push(response.titles[i]); 
+            } 
+            $scope.pageInfo.currentPage += 1;
+        });   
+    };
+    $scope.clear_search = function(){
         $scope.searchKey = "";
-    }
-    $scope.getArticleById = function(articleId) {
+    };
+    $scope.get_article_by_id = function(articleId) {
          $http.get("/blog/ajax/article?articleId=" + articleId).success(function(response) {
              $scope.$emit("articleChange", response);
              $scope.curretnId = articleId;
-             $timeout($scope.hideAsideMenu, 1000);
+             $scope.hide_aside_menu();
          });
-    }
-    $scope.getArticleById(1);
-    $scope.pageManager.search("");
-    
-    $scope.showAsideMenu = function(){
+    };
+    $scope.get_article_by_id(1);
+    $scope.search();
+    $scope.show_aside_menu = function(){
         $scope.show_titles = true; 
-    }
-    $scope.hideAsideMenu = function(){
+    };
+    $scope.hide_aside_menu = function(){
         $scope.show_titles = false; 
     }
 });
@@ -69,4 +64,15 @@ app.controller('articleCtrl', function($scope, $http) {
     $scope.$on("updateArticle", function(event, msg) {
         $scope.article = msg;
     });
+});
+
+app.directive('whenScrolled', function() { 
+  return function(scope, elm, attr) { 
+    var raw = elm[0]; 
+    elm.bind('scroll', function() { 
+      if (raw.scrollTop+raw.offsetHeight >= raw.scrollHeight) { 
+        scope.$apply(attr.whenScrolled); 
+      } 
+    }); 
+  }; 
 });

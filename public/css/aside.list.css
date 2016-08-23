@@ -50,7 +50,9 @@
 .aside-list .title-list .title-item:hover {
     font-size: 18px;
 }
-
+.aside-tip {
+    padding: 0 15px 10px;
+}
 .aside-list .title-list .selected{
     color: red;
     font-size: 18px;

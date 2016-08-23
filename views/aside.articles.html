@@ -3,19 +3,20 @@
         <form name="searchForm" novalidate>
             <div class="title-search">
                 <input class="form-control title-search-input" type="text" placeholder="搜索标题" name="searchKey" ng-model="searchKey" required/>
-                <a class="title-search-btn" href="javascript:void(0)" ng-click="pageManager.search('')"><i class="iconfont icon-sousuo"></i></a>
-                <a class="title-clear-btn" href="javascript:void(0)" ng-hide="searchForm.searchKey.$error.required" ng-click="clearSearch()"><i class="iconfont icon-buyotherdelete"></i></a>
+                <a class="title-search-btn" href="javascript:void(0)" ng-click="search()"><i class="iconfont icon-sousuo"></i></a>
+                <a class="title-clear-btn" href="javascript:void(0)" ng-hide="searchForm.searchKey.$error.required" ng-click="clear_search()"><i class="iconfont icon-buyotherdelete"></i></a>
             </div>
         </form>
-        <div class="list-group title-list" ng-cloak>
-            <a class="list-group-item title-item" ng-repeat="title in titles" href="javascript: void(0)" ng-class="{true: 'selected'}[title.articleId == currentId]" ng-click="getArticleById(title.articleId)" ng-bind="title.name"></a>
+        <div class="list-group title-list" when-scrolled="next_page()" ng-cloak>
+            <a class="list-group-item title-item" ng-repeat="title in titles" href="javascript: void(0)" ng-class="{true: 'selected'}[title.articleId == currentId]" ng-click="get_article_by_id(title.articleId)" ng-bind="title.name"></a>
+            
+            <div class="aside-tip" ng-bind="pageInfo.state"></div>
         </div>
-        <div ng-show='pageFactory.busy'>Loading data...</div>
     </div>
     <div class="fixed-nav aside-fixed-nav">
-        <a class="btn menu-btn" href="javascript: void(0)" ng-click="showAsideMenu()"><i class="iconfont icon-liebiao"></i></a>
+        <a class="btn menu-btn" href="javascript: void(0)" ng-click="show_aside_menu()"><i class="iconfont icon-liebiao"></i></a>
     </div>
-    <div class="aside-layer" ng-class="{true: 'aside-layer-show'}[show_titles]" ng-click="hideAsideMenu()"></div>
+    <div class="aside-layer" ng-class="{true: 'aside-layer-show'}[show_titles]" ng-click="hide_aside_menu()"></div>
 </aside>
 
 

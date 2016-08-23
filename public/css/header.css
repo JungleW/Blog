@@ -15,14 +15,14 @@
 /* 首页头部 */
 .header-home {    
     background: #323232 no-repeat center center scroll;
-    background-image: url(../img/index.jpg);    
+    background-image: url(img/index.jpg);    
     background-size: cover;
     height: 400px;
 }
 /* 文章页面头部 */
 .header-article {    
     background: #323232 no-repeat center center scroll;
-    background-image: url(../img/list.jpg);    
+    background-image: url(img/list.jpg);    
     background-size: cover;
     height: 250px;
 }

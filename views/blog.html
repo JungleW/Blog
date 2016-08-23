@@ -1,6 +1,6 @@
 <% include head.html %>
     
-<body ng-app="blogApp" ng-controller="blogController">
+<body ng-app="blogApp" ng-controller="blogController" when-scrolled="next_page()">
     <% include navbar.html %>
     <% include header.articles.html %>
     <div class="container articles">
