@@ -1,9 +1,11 @@
 var express = require('express');
 var path = require('path');
 var pageJson =require(path.join(__dirname, '../config/page.json'));
+var articles =require(path.join(__dirname, '../config/articles.json'));
+var titles =require(path.join(__dirname, '../config/titles.json'));
 var router = express.Router();
 
-/* GET blog page. */
+/* GET essay page. */
 router.get('/', function(req, res, next) {
     var articleId = req.query.articleId || 1;
     res.render('essay', {
@@ -26,64 +28,39 @@ router.get('/', function(req, res, next) {
             copy_date: pageJson.footer.copy_date,
             link: {label: pageJson.footer.link.label , url: pageJson.footer.link.url }
         },
-        article: {
-            title: "Hi, everybody!",
-            updateTime: "08-01-2016",
-            topic: "杂七杂八",
-            abstract: "简单介绍下个人主页",
-            content: '<p><strong>C4Nstudio.com</strong>是笔者C4N独立开发的个人主页及博客，使用包括<a href="https://facebook.github.io/react/">React</a><a href="https://nodejs.org/en/">Node.js</a>、<a href="http://foundation.zurb.com/">Foundation</a>和<a href="https://webpack.github.io/">Webpack</a>等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：</p><p>Hope you enjoy.</p>'
-
-        }
+        article: articles[0]
     });
 });
 /* GET article. */
 router.get('/ajax/article', function(req, res, next) {
-    var json = [{
-            title: "Hi, every1!",
-            updateTime: "08-01-2016",
-            topic: "杂七杂八",
-            abstract: "简单介绍下个人主页",
-            content: '<p><strong>C4Nstudio.com</strong>是笔者C4N独立开发的个人主页及博客，使用包括<a href="https://facebook.github.io/react/">React</a><a href="https://nodejs.org/en/">Node.js</a>、<a href="http://foundation.zurb.com/">Foundation</a>和<a href="https://webpack.github.io/">Webpack</a>等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：</p><p>Hope you enjoy.</p>'
-
-        },
-        {
-            title: "Hi, every2!",
-            updateTime: "08-01-2016",
-            topic: "杂七杂八",
-            abstract: "简单介绍下个人主页",
-            content: '<p><strong>C4Nstudio.com</strong>是笔者C4N独立开发的个人主页及博客，使用包括<a href="https://facebook.github.io/react/">React</a><a href="https://nodejs.org/en/">Node.js</a>、<a href="http://foundation.zurb.com/">Foundation</a>和<a href="https://webpack.github.io/">Webpack</a>等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：</p><p>Hope you enjoy.</p>'
-
-        },
-            {
-            title: "Hi, every3!",
-            updateTime: "08-01-2016",
-            topic: "杂七杂八",
-            abstract: "简单介绍下个人主页",
-            content: '<p><strong>C4Nstudio.com</strong>是笔者C4N独立开发的个人主页及博客，使用包括<a href="https://facebook.github.io/react/">React</a><a href="https://nodejs.org/en/">Node.js</a>、<a href="http://foundation.zurb.com/">Foundation</a>和<a href="https://webpack.github.io/">Webpack</a>等前后端框架、类库和工具，希望不仅能在搭建网站的过程中学以致用，掌握最新前后端知识，还能在推送的博文中向读者介绍个人了解到的技术信息，共同分享，不断进步。博客包括以下几个主要板块：等前后端框架、类库和工具，希望不仅能在搭'
-
-        }];
-    var articleId = req.query.articleId || 1;
+    var json = articles;
+    var articleId = req.query.articleId;
+    if(articleId == "undefined" || articleId == ''){
+        articleId = "0";
+    }
     res.send(json[articleId]);
 });
 /* GET article. */
 router.get('/ajax/titles', function(req, res, next) {
-    var articleId = req.query.articleId || 1;
-    res.send([
-                {name: "文章1", articleId: 1 },
-                {name: "文章2", articleId: 2 },
-                {name: "文章3", articleId: 3 },
-                {name: "文章4", articleId: 4 },
-                {name: "文章5", articleId: 5 },
-                {name: "文章6", articleId: 6 },
-                {name: "文章7", articleId: 7 },
-                {name: "文章3", articleId: 3 },
-                {name: "文章4", articleId: 4 },
-                {name: "文章5", articleId: 5 },
-                {name: "文章6", articleId: 6 },
-                {name: "文章7", articleId: 7 }
-            ]
-             
-    );
+    var flag = false;
+    var searchKey = req.query.searchKey;
+    if(searchKey=="") flag = true;
+    var page = parseInt(req.query.page);
+    var per_page = parseInt(req.query.per_page);
+    var startIndex = page * per_page;
+    var retTitles = [];
+    var length = titles.length;  
+    var len = 0;
+    for(var i=startIndex; len <per_page && i<length; i++){
+        if(flag || titles[i].name.match(searchKey)){
+            retTitles.push(titles[i]);
+            len++;
+        }
+    }
+    res.send({
+        searchkey: searchKey,
+        titles: retTitles
+    });
 });
 
 module.exports = router;

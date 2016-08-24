@@ -1,5 +1,7 @@
 var express = require('express');
 var path = require('path');
+var url = require("url");            //解析GET请求  
+var query = require("querystring");    //解析POST请求
 var pageJson =require(path.join(__dirname, '../config/page.json'));
 var articles =require(path.join(__dirname, '../config/articles.json'));
 var titles =require(path.join(__dirname, '../config/titles.json'));
@@ -34,7 +36,10 @@ router.get('/', function(req, res, next) {
 /* GET article. */
 router.get('/ajax/article', function(req, res, next) {
     var json = articles;
-    var articleId = req.query.articleId || 1;
+    var articleId = req.query.articleId;
+    if(articleId == "undefined" || articleId == ''){
+        articleId = "0";
+    }
     res.send(json[articleId]);
 });
 /* GET article. */
