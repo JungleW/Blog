@@ -1,10 +1,10 @@
 <% include head.html %>
     
-<body ng-app="blogApp" ng-controller="blogController" when-scrolled="next_page()">
-	<div class="container">
+<body ng-app="blogApp" ng-controller="blogController">
+	<div class="container" when-scroll-to-bottom="alert('nice')">
 	    <% include navbar.html %>
 	    <% include header.articles.html %>
-	    <div class="container articles">
+	    <div class="container articles ">
 	        <% include aside.articles.html %>
 	        <% include detail.articles.html %>
 	    </div>
