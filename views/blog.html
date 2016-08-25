@@ -1,15 +1,16 @@
 <% include head.html %>
     
 <body ng-app="blogApp" ng-controller="blogController" when-scrolled="next_page()">
-    <% include navbar.html %>
-    <% include header.articles.html %>
-    <div class="container articles">
-        <% include aside.articles.html %>
-        <% include detail.articles.html %>
+	<div class="container">
+	    <% include navbar.html %>
+	    <% include header.articles.html %>
+	    <div class="container articles">
+	        <% include aside.articles.html %>
+	        <% include detail.articles.html %>
+	    </div>
+	    <% include footer.html %>
+	    <% include to_top_btn.html %>
     </div>
-    <% include footer.html %>
-    <% include to_top_btn.html %>
-    
 <% include bottom1.html %>       
 <script src="/js/blog.js"></script>
 <% include bottom2.html %>

@@ -1,16 +1,16 @@
-.aside-list .aside-menu {    
+.aside-list .aside-menu {
     padding: 5px;
     background-color: #fff;
     overflow-x: hidden;
 }
-.aside-list .title-search {    
+.aside-menu .title-search {    
     padding-bottom: 5px;
     position: relative;
 }
-.aside-list .title-search-input {
+.aside-menu .title-search .title-search-input {
     padding-right: 34px;
 }
-.aside-list .title-search-btn{
+.aside-menu .title-search .title-search-btn{
     position: absolute;
     top: 0;
     right: 0;
@@ -19,7 +19,7 @@
     color: #bab6b2;
     text-decoration: none;
 }
-.aside-list .title-clear-btn {
+.aside-menu .title-clear-btn {
     position: absolute;
     top: 0;
     right: 34px;
@@ -28,46 +28,47 @@
     color: #bab6b2;
     text-decoration: none;
 }
-.aside-list .title-search-btn i,
-.aside-list .title-clear-btn i {    
+.aside-menu .title-search-btn i,
+.aside-menu .title-clear-btn i {    
     padding: 7px;
     font-size: 20px;
     line-height: 34px
 }
-.aside-list .title-clear-btn i { 
+.aside-menu .title-clear-btn i { 
     font-size: 13px;
 }
-.aside-list .title-list{    
+.aside-menu .title-content{    
     height: 360px;
     overflow-y: auto;
     margin-right: -25px;
 }
-.aside-list .title-list .title-item {
+.aside-menu .title-list{    
+    height: 100%;
+    margin-bottom: 0;
+}
+.aside-menu .title-list .title-item {
     white-space: nowrap;
     overflow: hidden;
     border: none;
 }
-.aside-list .title-list .title-item:hover {
+.aside-menu .title-list .title-item:hover {
     font-size: 18px;
 }
-.aside-tip {
-    padding: 0 15px 10px;
-}
-.aside-list .title-list .selected{
+.aside-menu .title-list .selected{
     color: red;
     font-size: 18px;
 }
 /* aside隐藏时的菜单按钮 */
-.aside-list .aside-fixed-nav {
+.aside-fixed-nav {
     position: fixed;
     left: 1%;
     bottom: 2%;
 }
-.aside-list .aside-fixed-nav .menu-btn {
+.aside-fixed-nav .aside-btn {
     display: none;
 }
 /* 遮罩层 */
-.aside-list .aside-layer {
+.aside-layer {
     position: fixed;
     top: 0;
     left: 0;
@@ -77,13 +78,19 @@
 }
 
 @media (max-width: 767px){
-    .aside-list .aside-fixed-nav .menu-btn {
+    .aside-fixed-nav .aside-btn {
         display: block;
     }
-    .aside-list .title-list {
-        height: 80%;
+    .aside-menu .title-content {
+        height: 100%;
+        margin-bottom: -40px;
     }
-    .aside-list .aside-menu {    
+    .aside-menu .title-list:after{
+        height: 40px;
+        content: "";
+        display: block;
+    }
+    .aside-menu {    
         position: fixed;
         top: 10%;
         left: -75%;

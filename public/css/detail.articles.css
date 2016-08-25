@@ -13,6 +13,10 @@
 .articles .article {
     display: inline-block;
     margin-left: 280px;
+    padding: 0 15px;
+}
+.articles .article img{
+    width: 100%;
 }
 @media (max-width: 767px){
     .articles {

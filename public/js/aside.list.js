@@ -3,7 +3,7 @@ app.controller('asideListCtrl', function($scope, $http) {
     $scope.search = function() {
         $scope.pageInfo = {
             currentPage: 0,
-            perPage: 10,
+            perPage: 20,
             searchKey: "",
             url: "/blog/ajax/titles",
             more: false,

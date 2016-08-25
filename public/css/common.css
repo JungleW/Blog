@@ -1,6 +1,10 @@
 body{
     font-family: "Microsoft YaHei",'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
+.container {
+    position: relative;
+    padding: 0;
+}
 /* 导航按钮 */
 .fixed-nav .btn {
     width: 40px;
