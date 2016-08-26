@@ -6,7 +6,7 @@
             <a class="title-clear-btn" href="javascript:void(0)" ng-hide="searchForm.searchKey.$error.required" ng-click="clear_search()"><i class="iconfont icon-buyotherdelete"></i></a>
         </form>
         <div class="title-content">
-            <div class="title-list list-group" when-scrolled="next_page()" ng-cloak>
+            <div class="title-list list-group" when-scroll-to-bottom="next_page()" ng-cloak>
                 <a class="list-group-item title-item" ng-repeat="title in titles" href="javascript: void(0)" ng-class="{true: 'selected'}[title.articleId == currentId]" ng-click="get_article_by_id(title.articleId)" ng-bind="title.name"></a>
             </div>
         </div>

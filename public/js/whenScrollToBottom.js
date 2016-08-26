@@ -1,4 +1,4 @@
-app.directive('whenScrolled', function() { 
+app.directive('whenScrollToBottom', function() { 
   return function(scope, elm, attr) { 
     var raw = elm[0]; 
     elm.bind('scroll', function() { 
