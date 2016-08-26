@@ -3,7 +3,7 @@ body{
 }
 .container {
     position: relative;
-    padding: 0;
+    padding: 0 10px;
 }
 /* 导航按钮 */
 .fixed-nav .btn {
@@ -13,8 +13,9 @@ body{
     font-size: 20px;
     line-height: 1;
     border-radius: 0;
-    border: 1px solid #d4d9de;
-    background-color: #d4d9de;
+    color: white;
+    border: 1px solid #48abff;
+    background-color: #338bc7;
 }
 .fixed-nav-right {
     position: fixed;
@@ -24,4 +25,21 @@ body{
 .fixed-nav-right .to-top-btn{
     opacity: 0;
     transition: opacity 1s;
+}
+
+.icon-link {
+    margin: 5px;
+    width: 40px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    display: block;
+    height: 40px;
+    background-color: red;
+}
+.icon-link i{
+}
+@media (max-width: 767px){
+    .hidden-m {
+        display: none;
+    }
 }

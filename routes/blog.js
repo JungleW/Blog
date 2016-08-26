@@ -19,8 +19,9 @@ router.get('/', function(req, res, next) {
             about: { label: pageJson.navbar.about.label,  url: pageJson.navbar.about.url, class: "" },
         } ,     
         nav_right: { 
-            login: { label: pageJson.nav_right.login.label,  url: pageJson.nav_right.login.url },
-            register: { label: pageJson.nav_right.register.label,  url: pageJson.nav_right.register.url },
+            facebook: { label: pageJson.nav_right.facebook.label,  url: pageJson.nav_right.facebook.url },
+            github: { label: pageJson.nav_right.github.label,  url: pageJson.nav_right.github.url },
+            me: { label: pageJson.nav_right.me.label,  url: pageJson.nav_right.me.url },
         },
         header:{
             topic: pageJson.header.blog.topic,

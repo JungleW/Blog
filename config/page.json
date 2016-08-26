@@ -38,8 +38,9 @@
         "about": { "label": "关于", "url": "/about" }
     },
     "nav_right": { 
-        "login": { "label": "登录", "url": "/login" },
-        "register": { "label": "注册", "url": "/register"} 
+        "facebook": { "label": "facebook", "url": "/login" },
+        "github": { "label": "github", "url": "/register"},
+        "me": { "label": "me", "url": "/register"} 
     },
     "footer": {
       "copy_date": "2014-2020",

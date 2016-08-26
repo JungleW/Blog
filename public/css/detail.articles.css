@@ -13,7 +13,7 @@
 .articles .article {
     display: inline-block;
     margin-left: 280px;
-    padding: 0 15px;
+    padding-bottom: 50px;
 }
 .articles .article img{
     width: 100%;
@@ -24,5 +24,6 @@
     }
     .articles .article {
         margin-left: 0;
+        padding: 5px;
     }
 }
