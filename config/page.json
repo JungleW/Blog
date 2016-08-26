@@ -1,41 +1,43 @@
 {
-    "file_instrution": {
-        "title": "各模块head里title标签的内容",
-        "header": "各模块header里的居中显示的内容",
-        "navbar": " 主导航栏",
-        "nav_right": "主导航栏右侧的按钮",
-        "footer": "底部内容"
-        
+    "home": {
+        "title":"JungleW-Home",
+        "label": "首页", 
+        "url": "/home" ,
+        "active": "",
+        "topic": "Jungle.W",
+        "sub_topic": "Close your eyes and open your mind."
     },
-    "title": {
-        "home": "JungleW-Home",
-        "blog": "JungleW-Blog",
-        "essay": "JungleW-Essay",
-        "about": "JungleW-About"
+    "blog": {
+        "title":"JungleW-Blog", 
+        "label": "博文", 
+        "url": "/blog",
+        "active": "",
+        "topic": "博文",
+        "sub_topic": "Technology has no end. Let us go."
     },
-    "header":{
-        "home": {
-            "topic": "Jungle.W",
-            "sub_topic": "Close your eyes and open your mind."
-        },
-        "blog": {
-            "topic": "博文",
-            "sub_topic": "Technology has no end. Let us go."
-        },
-        "essay": {
-            "topic": "随笔",
-            "sub_topic": "Life is not smooth. What we can do is to enjoy it."
-        },
-        "about": {
-            "topic": "关于我",
-            "sub_topic": "The sea is a kind of agreement."
-        }
+    "essay": {
+        "title":"JungleW-Essay",
+        "label": "随笔", 
+        "url": "/essay",
+        "active": "",
+        "topic": "随笔",
+        "sub_topic": "Life is not smooth. What we can do is to enjoy it."
     },
-    "navbar": {
-        "home": { "label": "首页", "url": "/home" },
-        "blog": { "label": "博文", "url": "/blog" },
-        "essay": { "label": "随笔", "url": "/essay" },
-        "about": { "label": "关于", "url": "/about" }
+    "photo": {
+        "title":"JungleW-Photo",
+        "label": "定格",
+        "url": "/photo",
+        "active": "",
+        "topic": "定格",
+        "sub_topic": "Here is the world."
+    },
+    "about": {
+        "title":"JungleW-About",
+        "label": "关于",
+        "url": "/about",
+        "active": "",
+        "topic": "关于我",
+        "sub_topic": "The sea is a kind of agreement."
     },
     "nav_right": { 
         "facebook": { "label": "facebook", "url": "/login" },

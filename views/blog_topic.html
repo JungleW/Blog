@@ -3,9 +3,10 @@
 <body ng-app="blogApp" ng-controller="blogController" when-scrolled="next_page()">
 	<div>
 	    <% include _navbar.html %>
-	    <% include _header_theme.html %>
-	    <div class="container topic">
-	        <% include _topic.html %>
+	    <% include _header_topic.html %>
+	    <div class="container articles">
+	        <% include _aside_left.html %>
+	        <% include _articles_right.html %>
 	    </div>
 	    <% include _footer.html %>
 	    <% include _nav_right_bottom.html %>

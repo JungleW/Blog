@@ -1,25 +1,27 @@
 var express = require('express');
 var path = require('path');
+var url = require("url");            //解析GET请求  
+var query = require("querystring");    //解析POST请求
 var page =require(path.join(__dirname, '../config/page.json'));
 var articles =require(path.join(__dirname, '../config/articles.json'));
 var titles =require(path.join(__dirname, '../config/titles.json'));
 var router = express.Router();
 
-/* GET essay page. */
+/* GET blog page. */
 router.get('/', function(req, res, next) {
-    page.essay.active = "active";
-    var title = page.essay.title;
-    var topic = page.essay.topic;
-    var sub_topic = page.essay.sub_topic;
-    res.render('essay', {
+    var articleId = req.query.articleId || 1;
+    var topic = req.query.topic;
+    if(topic == "undefined" || topic == ''){
+        topic = "web";
+    }
+    var title = topic;    
+    res.render('blog_topic', {
         title: title,
         topic: topic,
-        sub_topic: sub_topic,
-        page: page
+        page: page,
+        article: articles[0]
     });
-    page.essay.active = "";
 });
-
 /* GET article. */
 router.get('/ajax/article', function(req, res, next) {
     var json = articles;
