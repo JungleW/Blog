@@ -1,0 +1,13 @@
+/* 清浮动 */
+.f-cb:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 省略 */
+.nowrap
+{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

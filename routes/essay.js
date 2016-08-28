@@ -5,19 +5,26 @@ var articles =require(path.join(__dirname, '../config/articles.json'));
 var titles =require(path.join(__dirname, '../config/titles.json'));
 var router = express.Router();
 
+var js = require(path.join(__dirname, '../config/blogger.json'));
 /* GET essay page. */
 router.get('/', function(req, res, next) {
-    page.essay.active = "active";
+    // get param from foreground
+    var blogger = req.params.blogger;
+    blogger = js.blogger;
+    if(blogger){
+        blogger = "/" + blogger;
+    }
     var title = page.essay.title;
     var topic = page.essay.topic;
     var sub_topic = page.essay.sub_topic;
     res.render('essay', {
+        theme: "essay",
         title: title,
         topic: topic,
         sub_topic: sub_topic,
+        blogger: blogger,
         page: page
     });
-    page.essay.active = "";
 });
 
 /* GET article. */

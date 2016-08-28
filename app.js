@@ -6,10 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
-var index = require('./routes/index');
 var home = require('./routes/home');
 var blog = require('./routes/blog');
-var blogTopic = require('./routes/blog.topic');
+var blog_topic = require('./routes/blog_topic');
 var essay = require('./routes/essay');
 var photo = require('./routes/photo');
 var about = require('./routes/about');
@@ -30,13 +29,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', home);
 app.use('/home', home);
 app.use('/blog', blog);
-app.use('/blog/topic', blogTopic);
-app.use('/essay', essay);
-app.use('/photo', photo);
+app.use('/blog/topic', blog_topic);
 app.use('/about', about);
+
+app.use('/:blogger/home', home);
+app.use('/:blogger/blog', blog);
+app.use('/:blogger/blog/topic', blog_topic);
+app.use('/:blogger/essay', essay);
+app.use('/:blogger/photo', photo);
+app.use('/:blogger/about', about);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

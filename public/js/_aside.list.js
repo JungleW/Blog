@@ -1,11 +1,11 @@
-app.controller('asideListCtrl', function($scope, $http) {
+app.controller('asideListCtrl', function($scope, $http, $location) {
     $scope.searchKey = "";
     $scope.search = function() {
         $scope.pageInfo = {
             currentPage: 0,
             perPage: 20,
             searchKey: "",
-            url: "/blog/ajax/titles",
+            url: $location.absUrl()+"/ajax/titles",
             more: false,
             state: ""
         }
@@ -38,7 +38,7 @@ app.controller('asideListCtrl', function($scope, $http) {
         $scope.searchKey = "";
     };
     $scope.get_article_by_id = function(articleId) {
-         $http.get("/blog/ajax/article?articleId=" + articleId).success(function(response) {
+         $http.get($location.absUrl() +"/ajax/article?articleId=" + articleId).success(function(response) {
              $scope.$emit("articleChange", response);
              $scope.curretnId = articleId;
              $scope.hide_aside_menu();

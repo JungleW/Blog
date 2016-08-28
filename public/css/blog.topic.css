@@ -1,0 +1,12 @@
+.topic-list {
+    list-style: none;
+    padding: 0;
+    background-color: cadetblue;
+}
+.topic-item {    
+    float: left;
+    width: 24%;
+    padding: 10px 1%;
+    margin: 0 1% 5px 0;
+    background-color: black;
+}

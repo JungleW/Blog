@@ -7,8 +7,14 @@ var articles =require(path.join(__dirname, '../config/articles.json'));
 var titles =require(path.join(__dirname, '../config/titles.json'));
 var router = express.Router();
 
+var js = require(path.join(__dirname, '../config/blogger.json'));
 /* GET blog page. */
 router.get('/', function(req, res, next) {
+    var blogger = req.params.blogger;
+    blogger = js.blogger;
+    if(blogger){
+        blogger = "/" + blogger;
+    }
     var articleId = req.query.articleId || 1;
     var topic = req.query.topic;
     if(topic == "undefined" || topic == ''){
@@ -16,9 +22,11 @@ router.get('/', function(req, res, next) {
     }
     var title = topic;    
     res.render('blog_topic', {
+        theme: "",
         title: title,
         topic: topic,
         page: page,
+        blogger: blogger,
         article: articles[0]
     });
 });

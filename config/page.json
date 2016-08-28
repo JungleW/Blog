@@ -3,7 +3,6 @@
         "title":"JungleW-Home",
         "label": "首页", 
         "url": "/home" ,
-        "active": "",
         "topic": "Jungle.W",
         "sub_topic": "Close your eyes and open your mind."
     },
@@ -11,7 +10,6 @@
         "title":"JungleW-Blog", 
         "label": "博文", 
         "url": "/blog",
-        "active": "",
         "topic": "博文",
         "sub_topic": "Technology has no end. Let us go."
     },
@@ -19,7 +17,6 @@
         "title":"JungleW-Essay",
         "label": "随笔", 
         "url": "/essay",
-        "active": "",
         "topic": "随笔",
         "sub_topic": "Life is not smooth. What we can do is to enjoy it."
     },
@@ -27,7 +24,6 @@
         "title":"JungleW-Photo",
         "label": "定格",
         "url": "/photo",
-        "active": "",
         "topic": "定格",
         "sub_topic": "Here is the world."
     },
@@ -35,7 +31,6 @@
         "title":"JungleW-About",
         "label": "关于",
         "url": "/about",
-        "active": "",
         "topic": "关于我",
         "sub_topic": "The sea is a kind of agreement."
     },

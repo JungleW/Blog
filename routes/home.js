@@ -3,19 +3,30 @@ var path = require('path');
 var page =require(path.join(__dirname, '../config/page.json'));
 var router = express.Router();
 
+var js = require(path.join(__dirname, '../config/blogger.json'));
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    page.home.active = "active";
+    // get param from foreground
+    var blogger = req.params.blogger;
+    blogger =  js.blogger;
+    var target = "home";
+    if(blogger){
+        blogger = "/" + blogger;
+    }else {
+        target = "home_index";
+    }
     var title = page.home.title;
     var topic = page.home.topic;
     var sub_topic = page.home.sub_topic;
-    res.render('home', {
+    res.render(target , {
+        theme: "home",
         title: title,
         topic: topic,
         sub_topic: sub_topic,
+        blogger: blogger,
         page: page
     });
-    page.home.active = "";
+    blogger = "";
 });
 
 module.exports = router;
