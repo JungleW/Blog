@@ -1,28 +1,30 @@
-<nav class="navbar navbar-default navbar-home" role="navigation">
-   <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" 
-         data-target="#navbar-collapse">
-         <span class="sr-only">切换导航</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<%= page.home.url %>">Jungle<sup>W</sup></a>
-   </div>
-   <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav">
-         <li <% if (theme=='home') { %>class="active" <% } %>><a href="<%= blogger %><%= page.home.url %>"><%= page.home.label %></a></li>
-         <li <% if (theme=='blog') { %>class="active" <% } %>><a href="<%= blogger %><%= page.blog.url %>"><%= page.blog.label %></a></li>
-        <% if (blogger) { %>
-         <li <% if (theme=='essay') { %>class="active" <% } %>><a href="<%= blogger %><%= page.essay.url %>"><%= page.essay.label %></a></li>
-        <li <% if (theme=='photo') { %>class="active" <% } %>><a href="<%= blogger %><%= page.photo.url %>"><%= page.photo.label %></a></li>
-         <li <% if (theme=='about') { %>class="active" <% } %>><a href="<%= blogger %><%= page.about.url %>"><%= page.about.label %></a></li>
-       <% } %>
-      </ul>
-      <ul class="nav navbar-nav navbar-right hidden-m">
-         <li><a href="<%= page.nav_right.facebook.url %>"><%= page.nav_right.facebook.label %></a></li>
-         <li><a href="<%= page.nav_right.github.url %>"><%= page.nav_right.github.label %></a></li>
-         <li><a href="<%= page.nav_right.me.url %>"><%= page.nav_right.me.label %></a></li>
-      </ul>
-   </div>
-</nav>
+<div class="container">
+  <nav class="navbar navbar-default navbar-home" role="navigation">
+     <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+           data-target="#navbar-collapse">
+           <span class="sr-only">切换导航</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= page.home.url %>">Jungle<sup>W</sup></a>
+     </div>
+     <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+           <li <% if (theme=='home') { %>class="active" <% } %>><a href="<%= blogger %><%= page.home.url %>"><%= page.home.label %></a></li>
+           <li <% if (theme=='blog') { %>class="active" <% } %>><a href="<%= blogger %><%= page.blog.url %>"><%= page.blog.label %></a></li>
+          <% if (blogger) { %>
+           <li <% if (theme=='essay') { %>class="active" <% } %>><a href="<%= blogger %><%= page.essay.url %>"><%= page.essay.label %></a></li>
+          <li <% if (theme=='photo') { %>class="active" <% } %>><a href="<%= blogger %><%= page.photo.url %>"><%= page.photo.label %></a></li>
+           <li <% if (theme=='about') { %>class="active" <% } %>><a href="<%= blogger %><%= page.about.url %>"><%= page.about.label %></a></li>
+         <% } %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right hidden-m">
+           <li><a href="<%= page.nav_right.facebook.url %>"><%= page.nav_right.facebook.label %></a></li>
+           <li><a href="<%= page.nav_right.github.url %>"><%= page.nav_right.github.label %></a></li>
+           <li><a href="<%= page.nav_right.me.url %>"><%= page.nav_right.me.label %></a></li>
+        </ul>
+     </div>
+  </nav>
+</div>

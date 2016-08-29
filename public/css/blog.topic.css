@@ -5,8 +5,11 @@
 }
 .topic-item {    
     float: left;
-    width: 24%;
+    width: 10%;
     padding: 10px 1%;
-    margin: 0 1% 5px 0;
+    margin: 0 0 5px 1%;
     background-color: black;
+}
+.topic-item:nth-of-type(3n) {    
+    margin-left: 1%;
 }

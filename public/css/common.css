@@ -3,7 +3,6 @@ body{
 }
 .container {
     position: relative;
-    padding: 0 10px;
 }
 /* 导航按钮 */
 .fixed-nav .btn {
