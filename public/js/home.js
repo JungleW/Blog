@@ -1,3 +1,4 @@
-angular.module('homeApp', []).controller('homeController', function($scope) {
+var app = angular.module('homeApp', []);
+app.controller('homeController', function($scope) {
     
 });

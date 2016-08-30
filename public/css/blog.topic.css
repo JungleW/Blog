@@ -1,15 +1,26 @@
 .topic-list {
     list-style: none;
-    padding: 0;
-    background-color: cadetblue;
+    padding-left: 3%;
+    margin-top: 25px;
 }
 .topic-item {    
-    float: left;
-    width: 10%;
-    padding: 10px 1%;
-    margin: 0 0 5px 1%;
-    background-color: black;
+    width: 100%;
 }
-.topic-item:nth-of-type(3n) {    
-    margin-left: 1%;
+.topic-item > .title{    
+}
+.topic-item > .topic-group {
+    padding: 0 25px;
+}
+.topic-group > a {
+    display: inline-block;
+    float: left;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #e2dcdc;
+	text-decoration: none;
+}
+.topic-group > a:hover {
+    color: #00BCD4;
+    border: 1px solid #00BCD4;
 }

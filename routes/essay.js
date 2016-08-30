@@ -6,13 +6,15 @@ var titles =require(path.join(__dirname, '../config/titles.json'));
 var router = express.Router();
 
 var js = require(path.join(__dirname, '../config/blogger.json'));
+var essays = require(path.join(__dirname, '../config/essays.json'));
 /* GET essay page. */
 router.get('/', function(req, res, next) {
     // get param from foreground
     var blogger = req.params.blogger;
     blogger = js.blogger;
+    var preUrl = "";
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }
     var title = page.essay.title;
     var topic = page.essay.topic;
@@ -23,6 +25,8 @@ router.get('/', function(req, res, next) {
         topic: topic,
         sub_topic: sub_topic,
         blogger: blogger,
+        preUrl: preUrl,
+        essays: essays,
         page: page
     });
 });

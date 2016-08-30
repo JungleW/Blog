@@ -12,9 +12,10 @@ var js = require(path.join(__dirname, '../config/blogger.json'));
 router.get('/', function(req, res, next) {
     // get param from foreground
     var blogger = req.params.blogger;
+    var preUrl = "";
     blogger = js.blogger;
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }
     var title = page.photo.title;
     var topic = page.photo.topic;
@@ -25,6 +26,7 @@ router.get('/', function(req, res, next) {
         topic: topic,
         sub_topic: sub_topic,
         blogger: blogger,
+        preUrl: preUrl,
         page: page
     });
 });

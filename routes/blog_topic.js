@@ -9,14 +9,15 @@ var router = express.Router();
 
 var js = require(path.join(__dirname, '../config/blogger.json'));
 /* GET blog page. */
-router.get('/', function(req, res, next) {
+router.get('/:topic', function(req, res, next) {
     var blogger = req.params.blogger;
     blogger = js.blogger;
+    var preUrl = "";
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }
     var articleId = req.query.articleId || 1;
-    var topic = req.query.topic;
+    var topic = req.params.topic;
     if(topic == "undefined" || topic == ''){
         topic = "web";
     }
@@ -27,11 +28,12 @@ router.get('/', function(req, res, next) {
         topic: topic,
         page: page,
         blogger: blogger,
+        preUrl: preUrl,
         article: articles[0]
     });
 });
 /* GET article. */
-router.get('/ajax/article', function(req, res, next) {
+router.get('/:topic/ajax/article', function(req, res, next) {
     var json = articles;
     var articleId = req.query.articleId;
     if(articleId == "undefined" || articleId == ''){
@@ -40,7 +42,7 @@ router.get('/ajax/article', function(req, res, next) {
     res.send(json[articleId]);
 });
 /* GET article. */
-router.get('/ajax/titles', function(req, res, next) {
+router.get('/:topic/ajax/titles', function(req, res, next) {
     var flag = false;
     var searchKey = req.query.searchKey;
     if(searchKey=="") flag = true;

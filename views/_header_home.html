@@ -1,6 +1,6 @@
-<header class="header header-home container">
+<header class="header header-home">
     <div class="header-topic">
-        <h1 class="topic"><%= topic %></h1>
+        <h1 class="topic"><% if(blogger){ %><%= blogger %><% }else{ %><%= topic %><% } %></h1>
         <p class="sub-topic">
             <%= sub_topic %>
         </p>

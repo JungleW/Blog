@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
     // get param from foreground
     var blogger = req.params.blogger;
     blogger =  js.blogger;
+    var preUrl = "";
     var target = "home";
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }else {
         target = "home_index";
     }
@@ -24,6 +25,7 @@ router.get('/', function(req, res, next) {
         topic: topic,
         sub_topic: sub_topic,
         blogger: blogger,
+        preUrl: preUrl,
         page: page
     });
     blogger = "";

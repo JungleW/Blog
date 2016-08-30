@@ -1,0 +1,11 @@
+<article class="content-right">
+	<ul class="essay-list f-cb">
+	    <% essays.forEach(function(essay) { %>
+	    <li class="essay-item">
+	        <h3 class="e-title"><%= essay.essayTitle %></h3>
+	        <p class="e-content"><%= essay.essayContent %></p>
+	        <p class="e-bottom"><span class="time"><i class="iconfont icon-shijian"></i><%= essay.essayTime %></span><span class="collect"><i class="iconfont icon-ico-collect-off"></i><%= essay.essayView %></span><span class="view"><i class="iconfont icon-jushoucang"></i><%= essay.essayCollect %></span></p>
+	    </li> 
+	    <% }); %>
+	</ul>
+</article>

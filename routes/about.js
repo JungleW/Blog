@@ -10,9 +10,10 @@ router.get('/', function(req, res, next) {
     var blogger = req.params.blogger;
     
     blogger = js.blogger;
+    var preUrl = "";
     var target = "about";
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }
     var title = page.about.title;
     var topic = page.about.topic;
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
         topic: topic,
         sub_topic: sub_topic,
         blogger: blogger,
+        preUrl: preUrl,
         page: page
     });
 });

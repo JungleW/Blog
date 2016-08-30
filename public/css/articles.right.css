@@ -1,29 +1,4 @@
-.articles {
-    position: relative;
-    min-height: 450px;
-}
-.articles .aside {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: 250px;    
-    margin-top: 20px;
-}
-.articles .article {
-    display: inline-block;
-    margin-left: 280px;
-    padding-bottom: 50px;
-}
-.articles .article img{
+.article img{
     width: 100%;
 }
-@media (max-width: 767px){
-    .articles {
-        min-height: 0;
-    }
-    .articles .article {
-        margin-left: 0;
-        padding: 5px;
-    }
-}
+

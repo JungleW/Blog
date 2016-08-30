@@ -1,0 +1,18 @@
+<ul class="topic-list f-cb">
+    <li class="topic-item nowrap">
+           <h3 class="title">A</h3>
+           <p class="topic-group f-cb">
+    			<% topics.forEach(function(topic) { %>
+           		<a href="/blog/topic/<%= topic.topicId%>"><%= topic.name%></a>
+    			<% }); %>
+           </p>
+    </li> 
+    <li class="topic-item nowrap">
+           <h3 class="title">B</h3>
+           <p class="topic-group f-cb">
+    			<% topics.forEach(function(topic) { %>
+           		<a href="/blog/topic/<%= topic.topicId%>"><%= topic.name%></a>
+    			<% }); %>
+           </p>
+    </li> 
+</ul>

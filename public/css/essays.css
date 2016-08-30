@@ -1,0 +1,37 @@
+.essay-list {
+    list-style: none;
+    padding-left: 3%;
+}
+.essay-item {
+
+}
+
+.essay-item .e-title {
+}
+
+.essay-item .e-content {
+
+}
+.essay-item .e-bottom {
+
+}
+.essay-item .e-bottom > span{
+    padding: 3px 6px;
+    margin-right: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.essay-item .e-bottom i{
+    margin-right: 2px;
+}
+.essay-item .e-bottom > .collect,
+.essay-item .e-bottom > .view{
+    float: right;
+}
+
+@media (max-width: 767px){
+    .essay-item .e-title {
+        font-size: 18px;
+    }
+}
+

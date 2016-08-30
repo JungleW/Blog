@@ -13,8 +13,9 @@ router.get('/', function(req, res, next) {
     // get param from foreground
     var blogger = req.params.blogger;
     blogger = js.blogger;
+    var preUrl = "";
     if(blogger){
-        blogger = "/" + blogger;
+        preUrl = "/" + blogger;
     }
     var title = page.blog.title;
     var topic = page.blog.topic;
@@ -26,6 +27,7 @@ router.get('/', function(req, res, next) {
         sub_topic: sub_topic,
         blogger: blogger,
         topics: topics,
+        preUrl: preUrl,
         page: page
     });
 });
