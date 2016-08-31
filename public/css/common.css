@@ -1,6 +1,17 @@
 body{
     font-family: "Microsoft YaHei",'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
+.mynavbar {
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid #e7e7e7; 
+}
+
+@media (min-width: 768px){
+    .navbar-fixed {
+        position: fixed;
+    }
+}
 .container {
     position: relative;
     width: 100%;
@@ -17,7 +28,8 @@ body{
     top: 0;
     left: 0;
     display: inline-block;
-    width: 250px;    
+    width: 250px;   
+    z-index: 999; 
 }
 .content .content-right {
     padding-bottom: 50px;

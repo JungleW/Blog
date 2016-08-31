@@ -1,8 +1,12 @@
 <% include _head.html %>
     
 <body ng-app="blogTopicApp" ng-controller="blogTopicController" when-scrolled="next_page()">
+	<div class="mynavbar">	
+		<div class="container">
+			<% include _navbar.html %>
+		</div>
+	</div>
 	<div class="container">
-	    <% include _navbar.html %>
 	    <% include _header_topic.html %>
 	    <div class="content">
 	        <% include _aside_left.html %>

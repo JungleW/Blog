@@ -1,13 +1,19 @@
 <% include _head.html %>
     
-<body ng-app="blogApp" ng-controller="blogController" when-scrolled="next_page()">
+<body ng-app="blogApp" ng-controller="blogController" when-scroll-to-bottom="showAssistant()">
+	<div class="mynavbar">	
+		<div class="container">
+			<% include _navbar.html %>
+		</div>
+	</div>
+
 	<div class="container">
-	    <% include _navbar.html %>
 	    <% include _header_theme.html %>
 	    <% include _topics.html %>
-	    <% include _footer.html %>
-	    <% include _nav_right_bottom.html %>
     </div>
+
+	<% include _footer.html %>
+	<% include _nav_right_bottom.html %>
 <% include _bottom_1.html %>       
 <script src="/js/blog.js"></script>
 <% include _bottom_2.html %>

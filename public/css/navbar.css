@@ -1,20 +1,21 @@
 /* 导航栏 */
-.navbar-home {    
-    position: absolute;
+.navbar-home {
     width: 100%;
-    padding: 0;
-    background-color: transparent;
+    padding: 0 1%;
     color: #FFF;
     border-color: rgba(231, 231, 231, 0);
+    background-color: #ffffff;
     font-weight: 800;    
-    z-index: 10;
+    z-index: 10;    
+    margin-bottom: 0;
+    border-radius: 0;
 }
 .navbar-home .navbar-brand,
 .navbar-home .navbar-brand:focus {
-    color: #fff;
+    color: #00BCD4;
 }
 .navbar-home .navbar-brand:hover{
-    color: #fff;
+    color: #00BCD4;
     text-shadow: 1px 1px 2px #50ebff;
 }
 .navbar-home .navbar-toggle:hover,
@@ -27,21 +28,30 @@
 }
 .navbar-home .navbar-nav>li>a,
 .navbar-home .navbar-nav>li>a:focus {
-    color: #fff;
+    color: #00BCD4;
     background-color: transparent;
 }
 .navbar-home .navbar-nav>.active>a, 
 .navbar-home .navbar-nav>.active>a:hover, 
 .navbar-home .navbar-nav>.active>a:focus {
-    color: #50ebff;
-    background-color: rgba(255, 255, 255, 0.4);
+    color: #fffdfd;
+    background-color: #00BCD4;
 }
 .navbar-default .navbar-nav>li>a:hover{
-    color: #50ebff;
-    background-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    background-color: rgba(0, 188, 212, 0.6);
 }
 @media (max-width: 767px){
     .navbar-home .navbar-collapse {
         background-color: rgba(7,7,6,0.7);
+    }
+    .navbar-home {
+        position: absolute;
+        background-color: rgba(0, 255, 255, 0);
+    }
+}
+@media (min-width: 768px){
+    .navbar-fixed .navbar-home {    
+        
     }
 }
